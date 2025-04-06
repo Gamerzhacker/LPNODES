@@ -447,7 +447,7 @@ def generate_random_port():
     return random.randint(1025, 65535)
 
 async def create_server_task(interaction):
-    await interaction.response.send_message(embed=discord.Embed(description="🛠️ **Creating Vps Your,Powered by [hk-i9](https://discord.gg/gFgZysYp)**", color=0x00ff00))
+    await interaction.response.send_message(embed=discord.Embed(description="🛠️ **Creating Vps Your,Powered by [LpNode](https://discord.gg/lpnodes)**", color=0x00ff00))
     userid = str(interaction.user.id)
     if count_user_servers(userid) >= SERVER_LIMIT:
         await interaction.followup.send(embed=discord.Embed(description="```Error: Instance Limit-reached```", color=0xff0000))
@@ -457,7 +457,7 @@ async def create_server_task(interaction):
 
     try:
         container_id = subprocess.check_output([
-           "docker", "run", "-itd", "--privileged", "--hostname", "hk-i9", "--cap-add=ALL", image
+           "docker", "run", "-itd", "--privileged", "--hostname", "lpnode", "--cap-add=ALL", image
         ]).strip().decode('utf-8')
     except subprocess.CalledProcessError as e:
         await interaction.followup.send(embed=discord.Embed(description=f"### Error creating Docker container: {e}", color=0xff0000))
@@ -544,7 +544,7 @@ async def execute_command(command):
     stdout, stderr = await process.communicate()
     return stdout.decode(), stderr.decode()
 
-PUBLIC_IP = '127.22.99.11'
+PUBLIC_IP = '138.68.79.95'
 
 async def capture_output(process, keyword):
     while True:
