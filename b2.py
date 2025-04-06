@@ -615,7 +615,7 @@ async def help_command(interaction: discord.Interaction):
     embed.add_field(name="/renew", value="Renew The VPS.", inline=False)
     embed.add_field(name="/earncredit", value="earn the credit.", inline=False)
     embed.add_field(name="/delvps", value="delete vps user.", inline=False)
-    embed.add_field(name="/node_admin", value="admin nodes.", inline=False)
+    embed.add_field(name="/node_admin", value="admin nodes..", inline=False)
     await interaction.response.send_message(embed=embed)
 
 
